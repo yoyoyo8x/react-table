@@ -135,6 +135,11 @@ function App() {
       dataIndex: "version",
       key: "version",
       width: 80,
+      render: (text: string) => (
+        <div className=" text-center rounded-[12px] bg-green-400/40 text-green-700 border border-green-500">
+          {text}
+        </div>
+      ),
     },
     {
       title: "Created Date",
@@ -198,6 +203,7 @@ function App() {
           dataSource={data.slice(0, limitData)}
           columns={columns}
           pagination={false}
+          scroll={{ x: 1000 }}
         />
         {limitData < data.length && (
           <div
